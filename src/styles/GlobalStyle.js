@@ -65,7 +65,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Brandon Grotesque', Arial, Helvetica, sans-serif;
+    font-family: ${(props) => props.theme.fontFamily};
+    color: ${(props) => props.theme.fontColor};
   }
 `;
 
