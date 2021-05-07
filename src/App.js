@@ -1,10 +1,15 @@
 import React from "react";
 import GlobalStyle from "./styles/GlobalStyle";
+import { ThemeProvider } from "styled-components";
+import theme from "./styles/theme";
+
 
 const App = () => {
   return (
     <React.Fragment>
-      <GlobalStyle />
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+      </ThemeProvider>
     </React.Fragment>
   );
 };
