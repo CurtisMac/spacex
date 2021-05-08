@@ -68,6 +68,18 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${(props) => props.theme.fontFamily};
     color: ${(props) => props.theme.fontColor};
   }
+
+  button {
+    display: inline-block;
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: center;
+}
 `;
 
 export default GlobalStyle;
