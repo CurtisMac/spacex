@@ -26,6 +26,10 @@ function launchesReducer(state, { type, payload }) {
       launchYears: { $set: Array.from(data.years) },
     });
   }
+
+  if (type === "sort") {
+    return update(state, { order: { $set: payload } });
+  }
 }
 
 export { initialState, launchesReducer };
