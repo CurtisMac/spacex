@@ -9,8 +9,6 @@ import img3x from "../assets/icon/select@3x.png";
 
 const Select = styled(ReactSelect)`
   width: 140px;
-  margin: 10px;
-  margin-right: 5px;
   & .react-select__control {
     background-color: ${(props) => props.theme.primaryBlue};
     color: ${(props) => props.theme.fontColor};
