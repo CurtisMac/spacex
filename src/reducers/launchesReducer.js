@@ -30,6 +30,9 @@ function launchesReducer(state, { type, payload }) {
   if (type === "sort") {
     return update(state, { order: { $set: payload } });
   }
+  if (type === "filter") {
+    return update(state, { filterByYear: { $set: payload } });
+  }
 }
 
 export { initialState, launchesReducer };
