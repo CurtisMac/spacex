@@ -3,7 +3,8 @@ import styled from "styled-components";
 const StyledButton = styled.button`
   background-color: ${(props) => props.theme.primaryBlue};
   color: ${(props) => props.theme.buttonFontColor};
-  padding: 5px 15px;
+  padding: 5px 10px;
+  margin: 10px;
   .btn_icon {
     vertical-align: middle;
     margin-left: 8px;
