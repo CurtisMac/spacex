@@ -16,7 +16,7 @@ const StyledButton = styled(Button)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 5px;
+  margin-left: 10px;
   &:focus {
     border: 1px solid #2684ff;
   }
