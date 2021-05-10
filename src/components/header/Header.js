@@ -6,7 +6,7 @@ import Button from "./Button";
 import Logo from "./Logo";
 
 //styles
-const StyledHeader = styled.div`
+const StyledHeader = styled.header`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
