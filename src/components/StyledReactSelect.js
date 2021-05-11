@@ -49,10 +49,11 @@ const DropdownIndicator = () => (
   />
 );
 
-export default (props) => (
+const Component = (props) => (
   <Select
     classNamePrefix="react-select"
     components={{ DropdownIndicator }}
     {...props}
   />
 );
+export default Component;
