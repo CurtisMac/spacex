@@ -10,7 +10,11 @@ const initialState = {
 function launchesReducer(state, { type, payload }) {
   if (type === "load") {
     const { launches, rockets } = payload;
-    const data = launches.reduce(
+    //ensure launches are sorted by date
+    const sortedLaunches = [...launches].sort(
+      (a, b) => a.date_unix - b.date_unix
+    );
+    const data = sortedLaunches.reduce(
       (acc, cur) => {
         const launchYear = new Date(cur.date_local).getFullYear();
         cur.rocketDetails = rockets.find((rocket) => rocket.id === cur.rocket);
