@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 //components
 import Button from "./Button";
@@ -13,13 +14,18 @@ const StyledHeader = styled.header`
   margin: 30px 0 10px;
 `;
 
-const Header = () => {
+const Header = ({ dispatch, setError }) => {
   return (
     <StyledHeader>
       <Logo />
-      <Button />
+      <Button dispatch={dispatch} setError={setError} />
     </StyledHeader>
   );
+};
+
+Header.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  setError: PropTypes.func.isRequired,
 };
 
 export default Header;

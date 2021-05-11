@@ -55,11 +55,15 @@ const App = () => {
     fetchData();
   }, []);
 
+  if (error) {
+    alert(error);
+  }
+
   return (
     <React.Fragment>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Header />
+        <Header dispatch={dispatch} setError={setError} />
         <Main>
           <FeaturedImg className="featuredImg_container" />
           <Launches

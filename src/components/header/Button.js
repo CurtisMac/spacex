@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import DefaultButton from "../StyledButton";
+import PropTypes from "prop-types";
+import api from "../../adapters/launchesApi";
 
 //assets
 import img from "../../assets/icon/refresh.png";
@@ -21,9 +23,23 @@ const StyledButton = styled(DefaultButton)`
   }
 `;
 
-const Button = () => {
+const Button = ({ dispatch, setError }) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleClick = async () => {
+    setLoading(true);
+    const data = await api.getAllData().catch((err) => {
+      setError("Network error");
+    });
+    dispatch({ type: "load", payload: data });
+    setLoading(false);
+  };
   return (
-    <StyledButton>
+    <StyledButton
+      onClick={handleClick}
+      disabled={loading}
+      className={loading ? "disabled" : ""}
+    >
       <span className="btn_text">Reload Data</span>
       <img
         className="btn_icon"
@@ -33,6 +49,11 @@ const Button = () => {
       />
     </StyledButton>
   );
+};
+
+Button.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  setError: PropTypes.func.isRequired,
 };
 
 export default Button;
