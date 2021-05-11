@@ -12,7 +12,6 @@ const Image = styled.img`
 `;
 
 const FeaturedImg = ({ theme, className }) => {
-  console.log(theme);
   return (
     <div className={className}>
       <Image
